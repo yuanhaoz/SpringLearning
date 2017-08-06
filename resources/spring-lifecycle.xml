@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-init-method="defaultInit" default-destroy-method="defaultDestory">
+
+    <!-- Bean声明周期：定义、初始化、使用、销毁 -->
+    <!--两种初始化方法和两种销毁方法-->
+    <!--第一类是声明init_method和destory_method，第二种是实现接口InitializingBean和DisposableBean-->
+
+    <!--第一类：声明方法-->
+    <bean id="beanLifecycle" class="com.xjtu.lifecycle.BeanLifecycle"
+          init-method="start" destroy-method="destory"></bean>
+
+    <!--第二类：实现接口-->
+    <!--<bean id="beanLifecycle" class="com.xjtu.lifecycle.BeanLifecycle"></bean>-->
+
+</beans>

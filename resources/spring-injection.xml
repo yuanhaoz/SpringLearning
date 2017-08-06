@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--&lt;!&ndash; 依赖注入方式1：设置注入，在InjectionServiceImpl声明injectionDao成员变量的set方法 &ndash;&gt;-->
+    <!--<bean id="injectionService" class="com.xjtu.ioc.injection.service.InjectionServiceImpl">-->
+        <!--<property name="injectionDao" ref="injectionDao"></property>-->
+    <!--</bean>-->
+
+    <!-- 依赖注入方式2：构造器注入，在InjectionServiceImpl声明构造方法 -->
+    <bean id="injectionService" class="com.xjtu.ioc.injection.service.InjectionServiceImpl">
+        <constructor-arg ref="injectionDao"> </constructor-arg>
+    </bean>
+
+    <!-- 声明InjectionDaoImpl这个Bean文件 -->
+    <bean id="injectionDao" class="com.xjtu.ioc.injection.dao.InjectionDaoImpl"></bean>
+
+</beans>

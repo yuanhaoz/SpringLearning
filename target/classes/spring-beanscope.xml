@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- bean的作用域scope:
+        singleton -> 单例，指一个bean容器只存在一份
+        prototype -> 每次请求助（每次使用）创建新的实例，destory方法不生效
+        request -> 每次http请求创建一个实例且在当前request内有效
+        session -> 同上，每次http请求创建，当前session有效
+        global session -> 基于portlet的web中有效，如果是在web中，同session
+     -->
+    <bean id="beanScope" class="com.xjtu.bean.BeanScope" scope="singleton"></bean>
+    <!--<bean id="beanScope" class="com.xjtu.bean.BeanScope" scope="prototype"></bean>-->
+
+</beans>
