@@ -1,4 +1,4 @@
-package com.xjtu.ioc.interfaces;
+package com.xjtu.ioc.injection;
 
 import com.xjtu.base.UnitTestBase;
 import com.xjtu.ioc.injection.service.InjectionService;

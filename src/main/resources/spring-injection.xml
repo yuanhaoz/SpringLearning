@@ -10,7 +10,7 @@
 
     <!-- 依赖注入方式2：构造器注入，在InjectionServiceImpl声明构造方法 -->
     <bean id="injectionService" class="com.xjtu.ioc.injection.service.InjectionServiceImpl">
-        <constructor-arg ref="injectionDao"> </constructor-arg>
+        <constructor-arg ref="injectionDao"></constructor-arg>
     </bean>
 
     <!-- 声明InjectionDaoImpl这个Bean文件 -->
