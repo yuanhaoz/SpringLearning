@@ -1,6 +1,7 @@
 package com.xjtu.beanannotation.multibean;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +19,10 @@ public class BeanInvoker {
 
     @Autowired
     private Map<String, BeanInterface> map;
+
+    @Autowired
+    @Qualifier("beanImplTwo") // 指定BeanInterface具体为哪一个实现类
+    private BeanInterface beanInterface;
 
     public void getList() {
         if (null != list && 0 != list.size()) {
@@ -39,6 +44,14 @@ public class BeanInvoker {
         } else {
             System.out.println("map is null...");
         }
+
+        if (beanInterface != null) {
+            System.out.println(beanInterface.getClass().getName());
+        } else {
+            System.out.println("beanInterface is null...");
+        }
+
+
     }
 
 }
